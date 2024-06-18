@@ -16,14 +16,10 @@ pipeline {
                 }
             }
         }
-    }
-    post {
-        always {
-            script {
-                sh './upload_to_s3.sh /home/ubuntu'
+        stage('Deliver') { 
+            steps {
+                sh './jenkins/scripts/deliver.sh'
             }
         }
-
     }
-
 }
