@@ -17,4 +17,13 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            script {
+                sh './upload_to_s3.sh /home/ubuntu'
+            }
+        }
+
+    }
+
 }
